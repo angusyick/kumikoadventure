@@ -1,0 +1,235 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffcc;
+            color: #000;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23ffffcc"/><path d="M0 0L100 100M100 0L0 100" stroke="%23ffcc00" stroke-width="1"/></svg>');
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border: 3px dashed #ff6600;
+            padding: 20px;
+            box-shadow: 5px 5px 0px #999;
+            position: relative;
+        }
+        
+        .container::before {
+            content: "ASAYAKE TAIKO";
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #ff0000;
+            color: white;
+            padding: 3px 10px;
+            font-size: 12px;
+            transform: rotate(-5deg);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px dotted #3399ff;
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #ff3300;
+            text-shadow: 2px 2px 0px #ffcc00;
+            margin-bottom: 5px;
+            transform: rotate(-1deg);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .story-container {
+            margin-bottom: 25px;
+            border: 2px solid #3399ff;
+            padding: 15px;
+            background-color: #e6f7ff;
+        }
+        
+        .story-text {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            background-color: #ffffcc;
+            padding: 15px;
+            border-left: 5px solid #ff6600;
+        }
+        
+        .choices-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .choice-btn {
+            background-color: #ffcc00;
+            color: #000;
+            border: 2px solid #ff6600;
+            padding: 12px 15px;
+            border-radius: 0;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.1s;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        
+        .choice-btn:hover {
+            background-color: #ff9900;
+            transform: translate(3px, 3px);
+        }
+        
+        .choice-btn:active {
+            background-color: #ff6600;
+            transform: translate(1px, 1px);
+        }
+        
+        .image-container {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 15px;
+            border: 2px solid #000;
+            background-color: #cccccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .story-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                #cccccc,
+                #cccccc 10px,
+                #bbbbbb 10px,
+                #bbbbbb 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            border-top: 2px dotted #3399ff;
+            padding-top: 15px;
+        }
+        
+        .control-btn {
+            background-color: #cccccc;
+            color: #000;
+            border: 2px solid #666;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        
+        .control-btn:hover {
+            background-color: #bbbbbb;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .ending {
+            text-align: center;
+            padding: 20px;
+            border: 3px solid #ff3300;
+            background-color: #ffe6e6;
+        }
+        
+        .ending h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ff3300;
+            text-decoration: underline;
+        }
+        
+        .ending p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .blink {
+            animation: blink 1s step-start infinite;
+        }
+        
+        @keyframes blink {
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            background: #ffcc00;
+            padding: 5px;
+            margin-bottom: 15px;
+            border: 1px dashed #ff6600;
+        }
+        
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+            font-weight: bold;
+            color: #ff3300;
+        }
+        
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .story-text {
+                font-size: 16px;
+            }
+            
+            .choice-btn {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+        }
